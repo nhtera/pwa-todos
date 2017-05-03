@@ -1,11 +1,40 @@
-import { ADD_TODO  } from '../actions';
-import { combineReducers } from 'redux';
+import {
+  ADD_TODO,
+  CLEAR_TODOS,
+  MARK_TODO,
+  DELETE_TODO,
+  EDIT_TODO,
+  RECEIVE_CACHED_TODOS,
+  ADD_INIT_TODOS
+} from "../actions";
+import { combineReducers } from "redux";
+import { makeTodo } from "../util/todoUtil";
+import { initTodos } from "../constants/initTodos";
 
 const todos = (state = [], action) => {
   switch (action.type) {
     case ADD_TODO:
-      return state;
-
+      const todo = makeTodo(action.text);
+      return [...state, todo];
+    case MARK_TODO:
+      return state.map(
+        todo =>
+          (todo.id === action.id
+            ? { ...todo, completed: action.completed }
+            : todo)
+      );
+    case DELETE_TODO:
+      return state.filter(todo => todo.id !== action.id);
+    case EDIT_TODO:
+      return state.map(
+        todo => (todo.id === action.id ? { ...todo, text: action.text } : todo)
+      );
+    case ADD_INIT_TODOS:
+      return initTodos;
+    case RECEIVE_CACHED_TODOS:
+      return [...action.todos];
+    case CLEAR_TODOS:
+      return state.filter(todo => !todo.completed);
     default:
       return state;
   }

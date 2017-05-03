@@ -3,11 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.5",
+    "localforage": "^1.5.0",
+    "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-hammerjs": "^0.5.0",
+    "react-icons": "^2.2.3",
+    "react-motion": "^0.5.0",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "redux-saga": "^0.15.1",
+    "shortid": "^2.2.8",
     "sw-toolbox": "^3.6.0"
   },
   "devDependencies": {

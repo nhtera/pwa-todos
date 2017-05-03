@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body {
+  background: #e6e6e6;
+  height: 100vh;
+}
+
+p, label, h1, h2, h3, h4, h5, h6, span, a {
+  font-family: 'Lato', sans-serif;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#todo-header {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 32px 0px;
+  background-color: #3F51B5;
+  justify-content: center;
+}
+
+#todo-header > input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 20px;
+  margin: 0px 8px;
+  padding: 8px 12px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.75);
+  max-width: 480px;
+  height: 48px;
+}
+
+.todo-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.todo-lists-container {
+  max-width: 560px;
+  flex-grow: 1;
+}
+
+.heading-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.heading-container.hidden {
+  display: none;
+}
+
+.heading-container span, .heading-container button {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: rgb(100, 100, 100);
+  padding: 8px;
+  outline: none;
+}
+
+.todo-item-container {
+  position: relative;
+  display: flex;
+  margin: 2px 0;
+}
+
+.todo-item {
+  padding: 8px 16px;
+  font-size: 20px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  color: #FFF;
+}
+
+.todo-list {
+  width: 100%;
+}
+
+.todo-item-container.completed {
+  background-color: #607D8B !important;
+}
+
+.todo-item.completed {
+  color: rgb(255, 255, 255);
+  text-decoration: line-through;
+}
+
+.todo-actions-container {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.btn-edit {
+  background: #3F51B5;
+  border: none;
+  color: #fff;
+  font-size: 1.6em;
+  padding: .6em;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: #607D8B;
+  border: none;
+  color: #fff;
+  font-size: 1.6em;
+  padding: .6em;
+  cursor: pointer;
+}
+
+.heading-container button.btn-clear-completed {
+  background: #FF5722;
+  color: #fff;
+  cursor: pointer;
+}
+
+.chk-complete {
+  margin: 10px 10px 10px 0;
+  cursor: pointer;
+}
+
+.todo-edit-container {
+  position: absolute;
+  top: 0;
+  height: 64px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  display: none;
+}
+
+.todo-edit-container input {
+  border: 1px solid rgb(102, 102, 102);
+  font-size: 20px;
+  margin: 0px 8px;
+  padding: 8px;
+  background: none;
+  color: #FFF;
+  outline: none;
+  width: 100%;
+  font-family: 'Lato';
+}
+
+.todo-item-container.editing .todo-item {
+  visibility: hidden;
+}
+
+.todo-item-container.editing .todo-edit-container {
+  display: flex;
+}
