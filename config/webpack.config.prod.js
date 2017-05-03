@@ -8,7 +8,7 @@ var ManifestPlugin = require('webpack-manifest-plugin');
 var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var paths = require('./paths');
 var getClientEnvironment = require('./env');
-
+var OfflinePlugin = require('offline-plugin');
 
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -233,6 +233,15 @@ module.exports = {
     // having to parse `index.html`.
     new ManifestPlugin({
       fileName: 'asset-manifest.json'
+    }),
+    new OfflinePlugin({
+      caches: 'all',
+      scope: '/',
+      updateStrategy: 'all',
+      ServiceWorker: {
+        events: true,
+        entry: './sw-handler.js'
+      }
     })
   ],
   // Some libraries import Node modules but don't use them in the browser.
