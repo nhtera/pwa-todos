@@ -10,8 +10,6 @@ p, label, h1, h2, h3, h4, h5, h6, span, a {
 }
 
 #app {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 #todo-header {
@@ -37,21 +35,16 @@ p, label, h1, h2, h3, h4, h5, h6, span, a {
 }
 
 .todo-container {
-  display: flex;
-  flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
 }
 
 .todo-lists-container {
   max-width: 560px;
-  flex-grow: 1;
+  margin: 0 auto;
 }
 
 .heading-container {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
+  text-align: center;
 }
 
 .heading-container.hidden {
@@ -70,17 +63,17 @@ p, label, h1, h2, h3, h4, h5, h6, span, a {
 
 .todo-item-container {
   position: relative;
-  display: flex;
   margin: 2px 0;
+  overflow: hidden;
 }
 
 .todo-item {
   padding: 8px 16px;
   font-size: 20px;
   height: 48px;
-  display: flex;
-  align-items: center;
+  line-height: 48px;
   color: #FFF;
+  float: left;
 }
 
 .todo-list {
@@ -97,9 +90,7 @@ p, label, h1, h2, h3, h4, h5, h6, span, a {
 }
 
 .todo-actions-container {
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
+  float: right;
 }
 
 .btn-edit {
@@ -133,11 +124,9 @@ p, label, h1, h2, h3, h4, h5, h6, span, a {
 
 .todo-edit-container {
   position: absolute;
-  top: 0;
-  height: 64px;
+  top: 5px;
+  height: 36px;
   z-index: 1;
-  display: flex;
-  align-items: center;
   width: 100%;
   display: none;
 }
@@ -150,7 +139,8 @@ p, label, h1, h2, h3, h4, h5, h6, span, a {
   background: none;
   color: #FFF;
   outline: none;
-  width: 100%;
+  width: 526px;
+  height: 100%;
   font-family: 'Lato';
 }
 
@@ -159,5 +149,5 @@ p, label, h1, h2, h3, h4, h5, h6, span, a {
 }
 
 .todo-item-container.editing .todo-edit-container {
-  display: flex;
+  display: block;
 }
