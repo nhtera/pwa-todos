@@ -42,6 +42,6 @@ runtime.install({
   },
   onUpdated: () => {
     // Reload the webpage to load into the new version
-    // window.location.reload();
+    window.location.reload();
   }
 });

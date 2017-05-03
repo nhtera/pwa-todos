@@ -22,7 +22,7 @@ function* cacheTodos() {
 function* getCachedTodos() {
   try {
     const todos = yield getTodos();
-    yield put(receiveCachedTodos(todos));
+    yield put(receiveCachedTodos(todos || []));
   } catch (e) {
     yield e;
   }
