@@ -203,6 +203,7 @@ module.exports = {
     new OfflinePlugin({
       caches: 'all',
       scope: '/',
+      publicPath: '/',
       updateStrategy: 'all',
       ServiceWorker: {
         events: true,
