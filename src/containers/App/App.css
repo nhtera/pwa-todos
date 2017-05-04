@@ -68,13 +68,13 @@ p, label, h1, h2, h3, h4, h5, h6, span, a {
 }
 
 .todo-item {
-  padding: 8px 16px;
+  display: inline-block;
+  margin: 5px;
   font-size: 20px;
   height: 48px;
   line-height: 48px;
-  color: #FFF;
+  color: #fff;
   float: left;
-  max-width: 410px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -95,6 +95,7 @@ p, label, h1, h2, h3, h4, h5, h6, span, a {
 
 .todo-actions-container {
   float: right;
+  display: inline-block;
 }
 
 .btn-edit {
@@ -133,17 +134,17 @@ p, label, h1, h2, h3, h4, h5, h6, span, a {
   z-index: 1;
   width: 100%;
   display: none;
+  text-align: center;
 }
 
 .todo-edit-container input {
   border: 1px solid rgb(102, 102, 102);
   font-size: 20px;
-  margin: 0px 8px;
-  padding: 8px;
+  padding: 5px;
   background: none;
   color: #FFF;
   outline: none;
-  width: 526px;
+  width: 95%;
   height: 100%;
   font-family: 'Lato';
 }
